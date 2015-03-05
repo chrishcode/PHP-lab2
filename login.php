@@ -1,5 +1,6 @@
-<meta charset="uft-8">
+
 <?php
+
 include 'template.php';
 
 
@@ -14,15 +15,16 @@ END;
 
 	if($result->num_rows > 0) {
 		$row = $result->fetch_object();
-		$_SESSION["username"] = $row->username;
-		$_SESSION["userID"] = $row->userID;
-		//echo "<script>window.location = 'index.php';</script>";
-		header("Location:index.php");
+		$_SESSION['userName'] = $row->username;
+		$_SESSION['userID'] = $row->userID;
+		echo "<script>window.location = 'index.php';</script>";
+		//header("Location:index.php");
 	} else {
 		echo "Fel användarnamn eller lösenord.";
 	}
 
 }
+
 
 $content = <<< END
 	<h1>Logga in</h1>
@@ -33,19 +35,23 @@ $content = <<< END
 	</form>
 END;
 
-if(isset($_SESSION['userID'])) {
-	echo "<p>Du är inloggad som {$_SESSION['username']}</p>";
-	$navigation = <<< END
-		<nav>
-			<a href="index.php">Hem</a>
-			<a href="about.php">Om oss</a>
-			<a href="logout.php">Logga ut</a>
-		</nav>
-END;
-}
 echo $navigation;
 echo $content;
+
+// if(isset($_SESSION['userID'])) {
+// 	echo "<p>Du är inloggad som {$_SESSION['userName']}</p>";
+// 	$navigation = <<< END
+// 		<nav>
+// 			<a href="index.php">Hem</a>
+// 			<a href="about.php">Om oss</a>
+// 			<a href="logout.php">Logga ut</a>
+// 		</nav>
+// END;
+// }
+
 
 
 
 ?>
+
+<meta charset="uft-8">

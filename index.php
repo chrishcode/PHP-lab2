@@ -1,5 +1,6 @@
-<meta charset="uft-8">
+
 <?php
+
 include 'template.php';
 
 $content = <<< END
@@ -10,4 +11,6 @@ END;
 echo $navigation;
 echo $content;
 
+
 ?>
+<meta charset="uft-8">

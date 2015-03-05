@@ -1,9 +1,10 @@
-<meta charset="uft-8">
+
 <?php
 include 'template.php';
-
 session_unset();
 session_destroy();
+
+
 
 $content = <<< END
 <h1>Du har loggats ut!</h1>
@@ -13,3 +14,4 @@ END;
 echo $content;
 
 ?>
+<meta charset="uft-8">
